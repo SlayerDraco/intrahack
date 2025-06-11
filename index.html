@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" href="room_data_from_dxf_fixed.json" as="fetch" type="application/json">
     <title>3D House Viewer</title>
     <style>
       body { margin: 0; overflow: hidden; }
@@ -12,7 +13,8 @@
     <script type="module">
       import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
       import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
-
+      import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+      import { RoomGeometry } from 'https://unpkg.com/three@0.160.0/examples/jsm/geometries/RoomGeometry.js';
       // Sample JSON input (replace this with fetch from actual file if needed)
       const roomData = await fetch('./room_data_from_dxf.json').then(r => r.json());
 
